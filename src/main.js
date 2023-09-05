@@ -1,9 +1,10 @@
-// VIDEO 2 - COMPILE ES6 WITH BABEL
+// VIDEO 3 - LET AND CONST DECLARATION
 
-let test = 'Hai iq';
-
-class User{
-    register(){
-        console.log('User Registered...');
+function testVar(){
+    var x = 10;
+    if(true){
+        var x = 100;
+        console.log(x);
     }
+    console.log(x);
 }
