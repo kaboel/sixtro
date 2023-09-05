@@ -1,37 +1,41 @@
-// VIDEO 3 - LET AND CONST DECLARATION
+"use strict"
 
-/*
-function xVar(){ // variable gak bisa 
-    var x = 10;
-    if(true){
-        var x = 100;
-        console.log(x);
+// VIDEO 3 - CLASSES & INHERITANCE
+
+class User{
+    constructor(username, email, password, age){
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.age = age;
     }
-    console.log(x);
-}
 
-function xLet(){
-    let x = 10;
-    if(true){
-        let x = 100;
-        console.log(x);
+    static countUsers(){
+        console.log('There are 10 Users');
     }
-    console.log(x);
-}
 
-// let i = 10;
+    register(){
+        console.log(this.username +' is now registered');
+        }
+    }
 
-for(let i = 0; i < 10; i++){
-    console.log(i);
-}
-// console.log(i);
-*/
+    let ardi = new User('arrdix', 'ardi@mail.com', '123123', '17');
+    // let momo = new User('momomo', 'momo@mail.com', '123123', '19');
 
-const colors = [];
+    ardi.register();
+    // User.countUsers();
 
-colors.push('purple'); // sejujurnya malah bingung apa itu push tp gpp nanti gw pelajari
-colors.push('black');
+    class Member extends User{
+        constructor(username, email, password, age, memberPackage){
+            super(username, email, password, age);
+            this.package = memberPackage;
+        }
 
-// colors = 'pink';
+        getPackage(){
+            console.log(this.username +' is subscribed to '+this.package+' package');
+        }
+    }
 
-console.log(colors);
+    let momo = new Member('momomo', 'momo@mail.com', '123123', '19', 'Deluxe');
+
+    momo.getPackage();
